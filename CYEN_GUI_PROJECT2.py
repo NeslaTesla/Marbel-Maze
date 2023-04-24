@@ -1,4 +1,5 @@
 from tkinter import *
+from gpiozero import Servo
 
 buttonDisplays = [
     ["LUDia","Up","RUDia"],
@@ -30,7 +31,10 @@ def switchBack():
     f2.forget()
 
 def process():
-    pass
+    while(True):
+            servo = Servo(17)
+            servo.min()
+            GPIO.cleanup()
 
 f1 = Frame(window)
 f2 = Frame(window)
